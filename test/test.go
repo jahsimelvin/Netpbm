@@ -8,7 +8,7 @@ import (
 )
 
 func main(){
-	pbm, err := netpbm.ReadPBM("test.txt")
+	pbm, err := netpbm.ReadPBM("test.pbm")
 	if err != nil {
 		fmt.Println("error",err)
 		return
