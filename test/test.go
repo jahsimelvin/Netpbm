@@ -3,14 +3,13 @@ package main
 import (
 	"fmt"
 
-	"github.com/jahsimelvin/Netpbm"
-	//netpbm "github.com/jahsimelvin/Netpbm"
+	netpbm "github.com/jahsimelvin/Netpbm"
 )
 
-func main(){
+func main() {
 	pbm, err := netpbm.ReadPBM("test.pbm")
 	if err != nil {
-		fmt.Println("error",err)
+		fmt.Println("error", err)
 		return
 	}
 
