@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/jahsimelvin/netpbm"
-	//netpbm "github.com/jahsimelvin/netpbm"
+	"github.com/jahsimelvin/Netpbm"
+	//netpbm "github.com/jahsimelvin/Netpbm"
 )
 
 func main(){

@@ -1,3 +1,3 @@
-module github.com/jahsimelvin/netpbm
+module github.com/jahsimelvin/Netpbm
 
 go 1.21.0
