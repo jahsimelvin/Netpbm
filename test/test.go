@@ -1,4 +1,4 @@
-package main
+package test
 
 import (
 	"fmt"
@@ -6,8 +6,8 @@ import (
 	netpbm "github.com/jahsimelvin/Netpbm"
 )
 
-func main() {
-	filename := "test.pbm"
+func testpbm() {
+	filename := "../imageP1.pbm"
 	pbm, err := netpbm.ReadPBM(filename)
 	if err != nil {
 		fmt.Println("error", err)
