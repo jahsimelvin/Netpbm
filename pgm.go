@@ -98,6 +98,7 @@ func ReadPGM(filename string) (*PGM, error) {
 		MagicNumber: magicNumber,
 	}, nil
 }
+
 // Size retourne la largeur et la hauteur de l'image
 func (pgm *PGM) Size() (int,int){
 	return pgm.Width, pgm.Height // width = largeur ; height = hauteur (de l'image)
@@ -218,4 +219,30 @@ func (pgm *PGM) Rotate90CW() {
 			pgm.Data[i][j], pgm.Data[i][k] = pgm.Data[i][k], pgm.Data[i][j]
 		}
 	}
+}
+
+// ToPBM converts the PGM image to PBM.
+func (pgm *PGM) ToPBM() *PBM {
+    // Créer une nouvelle structure PBM
+    pbm := &PBM{
+        Width:       pgm.Width,
+        Height:      pgm.Height,
+        MagicNumber: "P1", // PBM a le numéro magique "P1"
+    }
+
+    // Initialiser les données de l'image PBM
+    pbm.Data = make([][]uint8, pgm.Height)
+    for y := 0; y < pgm.Height; y++ {
+        pbm.Data[y] = make([]uint8, pgm.Width)
+        for x := 0; x < pgm.Width; x++ {
+            // Définir un seuil pour convertir en 1 ou 0
+            if pgm.Data[y][x] > pgm.Max/2 {
+                pbm.Data[y][x] = 1
+            } else {
+                pbm.Data[y][x] = 0
+            }
+        }
+    }
+
+    return pbm
 }
